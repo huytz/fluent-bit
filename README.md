@@ -17,18 +17,18 @@
 
 2. Replace your docker data path at volume/volumeMount in `fluentd-bit-ds.yaml`
 ```
-        volumeMounts:
-        # hostpath must be the same with mountpath -> https://github.com/kubernetes/minikube/issues/876
-        - name: varlibdockercontainers
-          mountPath: "your docker/data/containers path"
-          readOnly: false
-        ...
-        ...
-      volumes:
-        ...
-      - name: varlibdockercontainers
-        hostPath:
-          path: "your docker/data/containers path"
+    volumeMounts:
+    # hostpath must be the same with mountpath -> https://github.com/kubernetes/minikube/issues/876
+    - name: varlibdockercontainers
+      mountPath: "your docker/data/containers path"
+      readOnly: false
+    ...
+    ...
+  volumes:
+    ...
+  - name: varlibdockercontainers
+    hostPath:
+      path: "your docker/data/containers path"
 ```
 
 
